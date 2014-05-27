@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Blog, from msurguy</title>
+    <title>Basit Blog Uygulaması</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -28,19 +28,19 @@
                 
              @if ( Auth::guest() )
               <a class="btn" href="{{ URL::to('login')}}">
-                <i class="icon-user"></i> Login
+                <i class="icon-user"></i> Giriş Yap
               </a>
             @else
             Welcome, <strong>{{ HTML::link('admin', Auth::user()->username) }} </strong> |
-                {{ HTML::link('logout', 'Logout') }}
+                {{ HTML::link('logout', 'Çıkış') }}
             @endif
                 
           </div>
           <div class="nav-collapse">
             <ul class="nav">
-              <li><a href="{{ URL::base() }}">Home</a></li>
+              <li><a href="{{ URL::base() }}">Ana Sayfa</a></li>
               @if ( !Auth::guest() )
-              <li><a href="{{ URL::to('admin') }}">Create New</a></li>
+              <li><a href="{{ URL::to('admin') }}">Yeni Oluştur</a></li>
               @endif
             </ul>
           </div><!--/.nav-collapse -->
@@ -57,7 +57,7 @@
 
     <div class="container">
         <footer>
-            <p>Blog &copy; 2012</p>
+            <p>Hasan Aytaç Basit Blog Uygulaması &copy; 2014</p>
         </footer>
       </div>
 </body>

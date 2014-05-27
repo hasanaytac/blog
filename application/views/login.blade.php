@@ -4,16 +4,16 @@
     {{ Form::open('login') }}
         <!-- check for login errors flash var -->
         @if (Session::has('login_errors'))
-            {{ Alert::error("Username or password incorrect.") }}
+            {{ Alert::error("Şifre ya da kullanıcı adı yanlış.") }}
         @endif
         <!-- username field -->
-        <p>{{ Form::label('username', 'Username') }}</p>
+        <p>{{ Form::label('username', 'Kullanıcı Adı') }}</p>
         <p>{{ Form::text('username') }}</p>
         <!-- password field -->
-        <p>{{ Form::label('password', 'Password') }}</p>
+        <p>{{ Form::label('password', 'Şifre') }}</p>
         <p>{{ Form::password('password') }}</p>
         <!-- submit button -->
-        <p>{{ Form::submit('Login', array('class' => 'btn-large')) }}</p>
+        <p>{{ Form::submit('Giriş Yap', array('class' => 'btn-large')) }}</p>
     {{ Form::close() }}
 </div>
 @endsection

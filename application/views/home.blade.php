@@ -3,7 +3,7 @@
 	
  	@if (Session::has('success_message'))
  		<div class="span8">
-        {{ Alert::success("Success!") }}
+        {{ Alert::success("Başarılı!") }}
     	</div>
     @endif
 
@@ -12,13 +12,18 @@
         <div class="span8">
             <h1>{{ $post->post_title }}</h1>
             <p>{{ $post->post_body }}</p>
-            <span class="badge badge-success">Posted {{$post->updated_at}}</span>
+            <span class="badge badge-success">Tarih {{$post->updated_at}}</span>
          
-			@if ( !Auth::guest() )
+                @if ( !Auth::guest())
+                <p><table>
               	{{ Form::open('post/'.$post->id, 'DELETE')}}
-	        	<p>{{ Form::submit('Delete', array('class' => 'btn-small')) }}</p>
-	    		{{ Form::close() }}
-    		@endif
+	        	{{ Form::submit('Sil', array('class' => 'btn-small')) }}
+                        {{ Form::close() }}&nbsp;
+                    {{ Form::open('post/'.$post->id, 'get')}}
+	        	{{ Form::submit('Değiştir', array('class' => 'btn-small')) }}
+                {{ Form::close() }} 
+                </table></p>
+                @endif
     		<hr />
 		</div>
         
